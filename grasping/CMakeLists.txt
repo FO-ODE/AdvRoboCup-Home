@@ -8,7 +8,6 @@ project(grasping)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  moveit_commander
   pcl_ros
   rospy
   sensor_msgs

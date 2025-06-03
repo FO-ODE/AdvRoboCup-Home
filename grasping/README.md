@@ -16,7 +16,7 @@ The code is thoroughly commented for reference.
 
 ## Example
 
-![Objects in Planning Scene](/images/PalnningScene.png)
+![Objects in Planning Scene](./images/PlanningScene.png)
 
 🔴 The red points represent the point cloud of the cola can.
 

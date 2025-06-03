@@ -48,12 +48,24 @@ class TableCollisionPublisher:
             min_xyz = np.minimum(p1, p2)
             max_xyz = np.maximum(p1, p2)
 
+
+            # extend the table obstacle
+            padding_x = 0.1
+            padding_y = 1.0
+
+            min_xyz[0] -= padding_x
+            max_xyz[0] += padding_x
+            min_xyz[1] -= padding_y
+            max_xyz[1] += padding_y
+
+
             # size and center of the obstacle
-            size_x, size_y = max_xyz[:2] - min_xyz[:2]
+            size_x, size_y = max_xyz[:2] - min_xyz[:2] - 0.1
+            
             bottom_z       = 0.0                           # to ground
             size_z         = max_xyz[2] - bottom_z
             center_x, center_y = (min_xyz[:2] + max_xyz[:2]) / 2.0
-            center_z           = bottom_z + size_z / 2.0
+            center_z           = bottom_z + size_z / 2.0 + 0.02
 
             # pose in base_footprint 
             pose_bf = PoseStamped()
