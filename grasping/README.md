@@ -43,6 +43,8 @@ This package must be used together with `plane_segmentation` and `object_labelin
 
 ## TODO
 
+- 力反馈
+
 - **Multi-object grasping**: Enable multi-object detection and grasping, potentially by integrating the `SAM` or `YOLOv8-segmentation` model. Use the segmentation mask to project onto the point cloud and select the desired grasp target.
 
 - **Improve end-effector orientation**: Currently, the end-effector always faces the positive x-axis during grasping. To improve flexibility and reduce trajectory limitations, the orientation should dynamically face the object to enable grasping from multiple angles.
