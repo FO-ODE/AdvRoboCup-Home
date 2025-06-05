@@ -161,8 +161,8 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  scripts/table_collision_publisher.py
-  scripts/insert_grasp_object.py
+  scripts/table_inserter.py
+  scripts/object_inserter.py
   scripts/planning_grasp.py
   scripts/grasp.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

@@ -39,8 +39,8 @@ class GraspExecutor:
     def pose_callback(self, msg: PointStamped):
         self.goal_pose.header.frame_id = msg.header.frame_id
         self.goal_pose.pose.position.x = msg.point.x - 0.3
-        self.goal_pose.pose.position.y = msg.point.y + 0.02
-        self.goal_pose.pose.position.z = msg.point.z + 0.03
+        self.goal_pose.pose.position.y = msg.point.y + 0.0
+        self.goal_pose.pose.position.z = msg.point.z + 0.003
         self.goal_pose.pose.orientation.x = 0.5
         self.goal_pose.pose.orientation.y = 0.5
         self.goal_pose.pose.orientation.z = -0.5
@@ -48,13 +48,13 @@ class GraspExecutor:
 
         self.attachObject.header.frame_id = msg.header.frame_id
         self.attachObject.pose.position.x = msg.point.x - 0.15
-        self.attachObject.pose.position.y = msg.point.y + 0.02
-        self.attachObject.pose.position.z = msg.point.z + 0.03
+        self.attachObject.pose.position.y = msg.point.y + 0.0
+        self.attachObject.pose.position.z = msg.point.z + 0.003
         self.attachObject.pose.orientation = self.goal_pose.pose.orientation
 
         self.liftObject.header.frame_id = msg.header.frame_id
         self.liftObject.pose.position.x = msg.point.x - 0.15
-        self.liftObject.pose.position.y = msg.point.y + 0.02
+        self.liftObject.pose.position.y = msg.point.y + 0.0
         self.liftObject.pose.position.z = msg.point.z + 0.2
         self.liftObject.pose.orientation = self.goal_pose.pose.orientation
 
@@ -117,28 +117,6 @@ class GraspExecutor:
     #     rospy.loginfo("Executing Cartesian path...")
     #     self.group.execute(plan, wait=True)
     #     self.group.stop()
-
-    # def move_base_forward(self, distance: float, speed: float = 0.05):
-    #     """Drive the TIAGo base forward *distance* (m) at *speed* (m/s)."""
-    #     if distance <= 0 or speed <= 0:
-    #         return
-
-    #     twist = Twist()
-    #     twist.linear.x = speed
-    #     duration = distance / speed
-    #     rate = rospy.Rate(10)  # 10 Hz
-    #     ticks = int(duration * 10)
-
-    #     rospy.loginfo(f"Driving base forward {distance*100:.0f} cm ...")
-    #     for _ in range(ticks):
-    #         self.base_pub.publish(twist)
-    #         rate.sleep()
-
-    #     # Stop the robot
-    #     twist.linear.x = 0.0
-    #     self.base_pub.publish(twist)
-    #     rospy.loginfo("Base motion complete.")
-
 
 
 
